@@ -45,14 +45,6 @@ func (p *TileCoord) String() string {
 }
 
 /*
-type Tile struct {
-	TileCoord
-	contentEncoding string
-	contentType string
-	data string
-	err error
-}
-
 type TileGrid interface {
 	maxExtent GeoExtent
 	tileSize Size
