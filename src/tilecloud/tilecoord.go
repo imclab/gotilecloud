@@ -4,13 +4,6 @@ import (
 	"fmt"
 )
 
-type TileBounds struct {
-	MinX int
-	MinY int
-	MaxX int
-	MaxY int
-}
-
 type TileCoord struct {
 	Z int
 	X int
