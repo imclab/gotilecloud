@@ -11,11 +11,6 @@ type TileCoord struct {
 	N int
 }
 
-type TileSize struct {
-	Width  int
-	Height int
-}
-
 func (p *TileCoord) Each() chan TileCoord {
 	ch := make(chan TileCoord)
 	go func() {
