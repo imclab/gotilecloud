@@ -1,12 +1,11 @@
-package main
+package tile
 
 import (
 	"testing"
-	"tilecloud"
 )
 
-func TestTileCoordEach1(t *testing.T) {
-	in := tilecloud.TileCoord{1, 2, 3, 1}
+func TestCoordEach1(t *testing.T) {
+	in := Coord{1, 2, 3, 1}
 	out := in
 	ch := in.Each()
 	x, ok := <-ch
@@ -22,13 +21,13 @@ func TestTileCoordEach1(t *testing.T) {
 	}
 }
 
-func TestTileCoordEach2(t *testing.T) {
-	in := tilecloud.TileCoord{1, 2, 3, 2}
-	expected := []tilecloud.TileCoord{
-		tilecloud.TileCoord{1, 2, 3, 1},
-		tilecloud.TileCoord{1, 2, 4, 1},
-		tilecloud.TileCoord{1, 3, 3, 1},
-		tilecloud.TileCoord{1, 3, 4, 1},
+func TestCoordEach2(t *testing.T) {
+	in := Coord{1, 2, 3, 2}
+	expected := []Coord{
+		Coord{1, 2, 3, 1},
+		Coord{1, 2, 4, 1},
+		Coord{1, 3, 3, 1},
+		Coord{1, 3, 4, 1},
 	}
 	ch := in.Each()
 	for _, out := range expected {
@@ -43,16 +42,16 @@ func TestTileCoordEach2(t *testing.T) {
 	}
 }
 
-func TestTileCoordString1(t *testing.T) {
-	in := tilecloud.TileCoord{1, 2, 3, 1}
+func TestCoordString1(t *testing.T) {
+	in := Coord{1, 2, 3, 1}
 	out := "1/2/3"
 	if x := in.String(); x != out {
 		t.Errorf("%v.String() = %v, want %v", in, x, out)
 	}
 }
 
-func TestTileCoordString2(t *testing.T) {
-	in := tilecloud.TileCoord{1, 2, 3, 4}
+func TestCoordString2(t *testing.T) {
+	in := Coord{1, 2, 3, 4}
 	out := "1/2/3:+4/+4"
 	if x := in.String(); x != out {
 		t.Errorf("%v.String() = %v, want %v", in, x, out)

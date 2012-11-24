@@ -1,7 +1,7 @@
-package tilecloud
+package tile
 
 type Tile struct {
-	TileCoord
+	Coord
 	contentEncoding string
 	contentType     string
 	data            string
