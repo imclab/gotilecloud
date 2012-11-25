@@ -8,18 +8,18 @@ func Rect(minX, minY, maxX, maxY float64) Rectangle {
 	return Rectangle{Point{minX, minY}, Point{maxX, maxY}}
 }
 
-func (r *Rectangle) Contains(p *Point) bool {
+func (r Rectangle) Contains(p Point) bool {
 	return r.Min.X <= p.X && p.X <= r.Max.X && r.Min.Y <= p.Y && p.Y <= r.Max.Y
 }
 
-func (r *Rectangle) Height() float64 {
+func (r Rectangle) Height() float64 {
 	return r.Max.Y - r.Min.Y
 }
 
-func (r *Rectangle) Size() Size {
+func (r Rectangle) Size() Size {
 	return Size{r.Width(), r.Height()}
 }
 
-func (r *Rectangle) Width() float64 {
+func (r Rectangle) Width() float64 {
 	return r.Max.X - r.Min.X
 }

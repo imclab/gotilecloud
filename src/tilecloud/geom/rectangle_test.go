@@ -34,7 +34,7 @@ func TestRectangleContains(t *testing.T) {
 		Point{4, 5}: false,
 	}
 	for in, out := range expected {
-		if x := r.Contains(&in); x != out {
+		if x := r.Contains(in); x != out {
 			t.Errorf("%v.Contains(%v) = %v, want %v", r, in, x, out)
 		}
 	}
