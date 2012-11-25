@@ -40,30 +40,3 @@ func (c *Coord) String() string {
 	}
 	return fmt.Sprintf("%d/%d/%d:+%d/+%d", c.Z, c.X, c.Y, c.N, c.N)
 }
-
-/*
-type TileGrid interface {
-	maxExtent GeoExtent
-	tileSize Size
-	flipY bool
-	Children(tileCoord Coord) chan Coord
-	Extent(tileCoord Coord, border int) GeoExtent
-	Parent(tileCoord Coord) Coord
-	Roots() chan Coord
-	Coord(z int, geoPoint GeoPoint) Coord
-	Zs() chan int
-}
-
-type TileStore interface {
-	Contains(tile Tile) bool
-	Count() int
-	Delete(ch chan Tile) chan Tile
-	DeleteOne(tile Tile) Tile
-	Get() chan Tile
-	GetAll() chan Tile
-	GetOne(tile Tile) Tile
-	List() chan Tile
-	PutOne(tile Tile) Tile
-	Put(ch chan Tile) chan Tile
-}
-*/
