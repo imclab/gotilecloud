@@ -16,6 +16,10 @@ func (r *Rectangle) Height() float64 {
 	return r.Max.Y - r.Min.Y
 }
 
+func (r *Rectangle) Size() Size {
+	return Size{r.Width(), r.Height()}
+}
+
 func (r *Rectangle) Width() float64 {
 	return r.Max.X - r.Min.X
 }
